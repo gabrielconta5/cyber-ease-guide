@@ -1,5 +1,7 @@
 import { Shield, Lock, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { RiskCard } from "@/components/RiskCard";
+import { PasswordStrengthChecker } from "@/components/PasswordStrengthChecker";
+import { PasswordGenerator } from "@/components/PasswordGenerator";
 import { Card } from "@/components/ui/card";
 
 const Index = () => {
@@ -47,23 +49,24 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-subtle">
       {/* Hero Section */}
-      <header className="bg-gradient-primary text-primary-foreground py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-block p-4 bg-white/10 rounded-full mb-6">
-            <Shield className="w-16 h-16" />
+      <header className="bg-gradient-primary text-primary-foreground py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yem0wIDI4YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yek0xNiA0NGMwLTEuMTA1Ljg5NS0yIDItMnMyIC44OTUgMiAyLS44OTUgMi0yIDItMi0uODk1LTItMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+        <div className="max-w-6xl mx-auto text-center relative z-10">
+          <div className="inline-block p-5 bg-white/10 rounded-2xl mb-6 backdrop-blur-sm animate-fade-in">
+            <Shield className="w-20 h-20" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
             Como se proteger na internet
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto">
-            Guia rápido de cibersegurança
+          <p className="text-2xl md:text-3xl text-primary-foreground/90 max-w-3xl mx-auto animate-fade-in">
+            Guia completo e interativo de cibersegurança
           </p>
         </div>
       </header>
 
       {/* Introduction */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <Card className="p-8 bg-card shadow-card border-border">
+      <section className="max-w-6xl mx-auto px-4 py-12 -mt-8 relative z-20">
+        <Card className="p-8 bg-card shadow-hover border-border animate-fade-in">
           <p className="text-lg text-center text-foreground leading-relaxed">
             Proteger suas informações é mais fácil do que parece! Com pequenas ações diárias, 
             você pode evitar grandes problemas. Este guia foi criado para ajudar você a navegar 
@@ -72,12 +75,31 @@ const Index = () => {
         </Card>
       </section>
 
-      {/* Main Risks */}
+      {/* Interactive Password Tools */}
       <section className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-3">
+            Ferramentas de Senha
+          </h2>
+          <p className="text-muted-foreground">
+            Teste e crie senhas fortes com nossas ferramentas interativas
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <PasswordStrengthChecker />
+          <PasswordGenerator />
+        </div>
+      </section>
+
+      {/* Main Risks */}
+      <section className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
           Os 3 principais riscos online
         </h2>
-        <div className="grid md:grid-cols-1 gap-6">
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Conheça as ameaças mais comuns e aprenda a se proteger de cada uma delas
+        </p>
+        <div className="grid md:grid-cols-3 gap-6">
           {risks.map((risk, index) => (
             <RiskCard
               key={index}
@@ -92,15 +114,17 @@ const Index = () => {
 
       {/* Best Practices */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <Card className="p-8 bg-gradient-primary text-primary-foreground shadow-card">
+        <Card className="p-8 bg-gradient-primary text-primary-foreground shadow-hover border-0">
           <div className="flex items-center gap-3 mb-6">
-            <CheckCircle2 className="w-8 h-8" />
-            <h2 className="text-2xl font-bold">Boas Práticas Gerais</h2>
+            <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+              <CheckCircle2 className="w-8 h-8" />
+            </div>
+            <h2 className="text-3xl font-bold">Boas Práticas Gerais</h2>
           </div>
-          <ul className="space-y-3">
+          <ul className="grid md:grid-cols-2 gap-3">
             {bestPractices.map((practice, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-primary-foreground/90 mt-1">•</span>
+              <li key={index} className="flex items-start gap-3 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                <span className="text-primary-foreground mt-1 text-xl">•</span>
                 <span className="text-primary-foreground/95">{practice}</span>
               </li>
             ))}
@@ -110,14 +134,14 @@ const Index = () => {
 
       {/* Password Reminder */}
       <section className="max-w-6xl mx-auto px-4 py-8 pb-16">
-        <Card className="p-6 bg-secondary border-primary/20 shadow-card">
+        <Card className="p-6 bg-secondary/50 border-primary/20 shadow-card backdrop-blur-sm">
           <div className="flex items-start gap-4">
-            <div className="p-2 bg-primary/10 rounded-lg">
+            <div className="p-3 bg-primary/10 rounded-lg">
               <Lock className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Lembrete Importante</h3>
-              <p className="text-foreground">
+              <h3 className="font-semibold text-foreground mb-2 text-xl">Lembrete Importante</h3>
+              <p className="text-foreground leading-relaxed">
                 Troque suas senhas regularmente (a cada 3-6 meses) e nunca use a mesma senha 
                 em sites diferentes. Se possível, use um gerenciador de senhas confiável para 
                 ajudar a criar e guardar senhas fortes.
@@ -129,8 +153,10 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center text-muted-foreground">
-          <p>Sua segurança online começa com pequenas ações. Proteja-se hoje! 🛡️</p>
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-foreground font-medium text-lg">
+            Sua segurança online começa com pequenas ações. Proteja-se hoje! 🛡️
+          </p>
         </div>
       </footer>
     </div>
