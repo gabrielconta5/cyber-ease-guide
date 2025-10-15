@@ -1,7 +1,8 @@
-import { Shield, Lock, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Shield, Lock, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { RiskCard } from "@/components/RiskCard";
 import { PasswordStrengthChecker } from "@/components/PasswordStrengthChecker";
 import { PasswordGenerator } from "@/components/PasswordGenerator";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { Card } from "@/components/ui/card";
 
 const Index = () => {
@@ -47,27 +48,34 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen relative">
+      <AnimatedBackground />
+      
       {/* Hero Section */}
-      <header className="bg-gradient-primary text-primary-foreground py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yem0wIDI4YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yek0xNiA0NGMwLTEuMTA1Ljg5NS0yIDItMnMyIC44OTUgMiAyLS44OTUgMi0yIDItMi0uODk1LTItMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+      <header className="relative py-24 px-4 overflow-hidden">
+        {/* Gradient background with animation */}
+        <div className="absolute inset-0 bg-gradient-primary opacity-20 blur-3xl animate-gradient-shift bg-[length:200%_200%]"></div>
+        
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <div className="inline-block p-5 bg-white/10 rounded-2xl mb-6 backdrop-blur-sm animate-fade-in">
-            <Shield className="w-20 h-20" />
+          <div className="inline-block p-6 bg-gradient-primary rounded-3xl mb-6 shadow-glow animate-float">
+            <Shield className="w-24 h-24 text-primary-foreground" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Como se proteger na internet
           </h1>
-          <p className="text-2xl md:text-3xl text-primary-foreground/90 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-2xl md:text-3xl text-foreground/80 max-w-3xl mx-auto animate-fade-in flex items-center justify-center gap-2">
+            <Sparkles className="w-6 h-6 text-accent" />
             Guia completo e interativo de cibersegurança
+            <Sparkles className="w-6 h-6 text-accent" />
           </p>
         </div>
       </header>
 
       {/* Introduction */}
-      <section className="max-w-6xl mx-auto px-4 py-12 -mt-8 relative z-20">
-        <Card className="p-8 bg-card shadow-hover border-border animate-fade-in">
-          <p className="text-lg text-center text-foreground leading-relaxed">
+      <section className="max-w-6xl mx-auto px-4 py-12 relative z-20">
+        <Card className="p-8 bg-card/80 backdrop-blur-xl shadow-glow border-border/50 animate-fade-in relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-secondary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+          <p className="text-lg text-center text-foreground leading-relaxed relative z-10">
             Proteger suas informações é mais fácil do que parece! Com pequenas ações diárias, 
             você pode evitar grandes problemas. Este guia foi criado para ajudar você a navegar 
             com segurança, mesmo sem ter conhecimentos técnicos avançados.
@@ -92,11 +100,11 @@ const Index = () => {
       </section>
 
       {/* Main Risks */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-4 text-foreground">
+      <section className="max-w-6xl mx-auto px-4 py-12 relative">
+        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">
           Os 3 principais riscos online
         </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto text-lg">
           Conheça as ameaças mais comuns e aprenda a se proteger de cada uma delas
         </p>
         <div className="grid md:grid-cols-3 gap-6">
@@ -113,19 +121,20 @@ const Index = () => {
       </section>
 
       {/* Best Practices */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <Card className="p-8 bg-gradient-primary text-primary-foreground shadow-hover border-0">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
-              <CheckCircle2 className="w-8 h-8" />
+      <section className="max-w-6xl mx-auto px-4 py-12 relative">
+        <Card className="p-10 bg-gradient-accent text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(310_85%_65%_/_0.3),_transparent_50%)]"></div>
+          <div className="flex items-center gap-4 mb-8 relative z-10">
+            <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm shadow-lg">
+              <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h2 className="text-3xl font-bold">Boas Práticas Gerais</h2>
+            <h2 className="text-4xl font-bold">Boas Práticas Gerais</h2>
           </div>
-          <ul className="grid md:grid-cols-2 gap-3">
+          <ul className="grid md:grid-cols-2 gap-4 relative z-10">
             {bestPractices.map((practice, index) => (
-              <li key={index} className="flex items-start gap-3 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+              <li key={index} className="flex items-start gap-3 bg-white/10 p-5 rounded-xl backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
                 <span className="text-primary-foreground mt-1 text-xl">•</span>
-                <span className="text-primary-foreground/95">{practice}</span>
+                <span className="text-primary-foreground/95 leading-relaxed">{practice}</span>
               </li>
             ))}
           </ul>
