@@ -44,7 +44,8 @@ const Index = () => {
     "Faça backup regular dos seus arquivos importantes",
     "Use redes Wi-Fi seguras - evite fazer transações bancárias em Wi-Fi público",
     "Revise as permissões dos aplicativos instalados no seu celular",
-    "Desconfie de promoções boas demais para ser verdade"
+    "Desconfie de promoções boas demais para ser verdade",
+    "Não compartilhe informações pessoais em redes sociais públicas"
   ];
 
   return (
@@ -52,7 +53,7 @@ const Index = () => {
       <AnimatedBackground />
       
       {/* Hero Section */}
-      <header className="relative py-24 px-4 overflow-hidden">
+      <header className="relative py-24 px-4 pb-32">
         {/* Gradient background with animation */}
         <div className="absolute inset-0 bg-gradient-primary opacity-20 blur-3xl animate-gradient-shift bg-[length:200%_200%]"></div>
         
@@ -60,7 +61,7 @@ const Index = () => {
           <div className="inline-block p-6 bg-gradient-primary rounded-3xl mb-6 shadow-glow animate-float">
             <Shield className="w-24 h-24 text-primary-foreground" />
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight pb-2">
             Como se proteger na internet
           </h1>
           <p className="text-2xl md:text-3xl text-foreground/80 max-w-3xl mx-auto animate-fade-in flex items-center justify-center gap-2">
@@ -122,8 +123,8 @@ const Index = () => {
 
       {/* Best Practices */}
       <section className="max-w-6xl mx-auto px-4 py-12 relative">
-        <Card className="p-10 bg-gradient-accent text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(310_85%_65%_/_0.3),_transparent_50%)]"></div>
+        <Card className="p-10 bg-gradient-secondary text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(195_85%_65%_/_0.3),_transparent_50%)]"></div>
           <div className="flex items-center gap-4 mb-8 relative z-10">
             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm shadow-lg">
               <CheckCircle2 className="w-10 h-10" />
