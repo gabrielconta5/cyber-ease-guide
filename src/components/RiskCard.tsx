@@ -10,7 +10,7 @@ interface RiskCardProps {
 
 export const RiskCard = ({ icon: Icon, title, description, tips }: RiskCardProps) => {
   return (
-    <Card className="group p-6 hover:shadow-glow hover:-translate-y-2 transition-all duration-500 animate-fade-in border-border/50 bg-card/80 backdrop-blur-xl flex flex-col relative overflow-hidden">
+    <Card className="group p-6 hover:shadow-glow hover:-translate-y-2 transition-all duration-500 animate-fade-in border-border/50 bg-card/80 backdrop-blur-xl h-full flex flex-col relative overflow-hidden">
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
       
@@ -22,9 +22,9 @@ export const RiskCard = ({ icon: Icon, title, description, tips }: RiskCardProps
         <p className="text-muted-foreground text-sm leading-relaxed min-h-[3rem]">{description}</p>
       </div>
       <div className="mt-auto relative z-10">
-        <div className="bg-muted/50 backdrop-blur-sm rounded-lg p-4 border border-border/50">
+        <div className="bg-muted/50 backdrop-blur-sm rounded-lg p-4 border border-border/50 min-h-[240px] flex flex-col">
           <h4 className="font-semibold text-foreground mb-3 text-sm">Como se proteger:</h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 flex-1">
             {tips.map((tip, index) => (
               <li key={index} className="flex items-start gap-2">
                 <span className="text-primary mt-0.5 font-bold">✓</span>
