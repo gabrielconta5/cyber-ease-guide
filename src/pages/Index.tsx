@@ -124,8 +124,8 @@ const Index = () => {
 
       {/* Best Practices */}
       <section className="max-w-6xl mx-auto px-4 py-12 relative">
-        <Card className="p-10 bg-gradient-primary text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(280_85%_65%_/_0.3),_transparent_50%)]"></div>
+        <Card className="p-10 bg-gradient-accent text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(310_85%_65%_/_0.3),_transparent_50%)]"></div>
           <div className="flex items-center gap-4 mb-8 relative z-10">
             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm shadow-lg">
               <CheckCircle2 className="w-10 h-10" />
