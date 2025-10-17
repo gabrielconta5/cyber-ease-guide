@@ -3,6 +3,7 @@ import { RiskCard } from "@/components/RiskCard";
 import { PasswordStrengthChecker } from "@/components/PasswordStrengthChecker";
 import { PasswordGenerator } from "@/components/PasswordGenerator";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { SecurityQuiz } from "@/components/SecurityQuiz";
 import { Card } from "@/components/ui/card";
 
 const Index = () => {
@@ -123,8 +124,8 @@ const Index = () => {
 
       {/* Best Practices */}
       <section className="max-w-6xl mx-auto px-4 py-12 relative">
-        <Card className="p-10 bg-gradient-secondary text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(195_85%_65%_/_0.3),_transparent_50%)]"></div>
+        <Card className="p-10 bg-gradient-primary text-primary-foreground shadow-glow border-0 relative overflow-hidden animate-gradient-shift bg-[length:200%_200%]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(280_85%_65%_/_0.3),_transparent_50%)]"></div>
           <div className="flex items-center gap-4 mb-8 relative z-10">
             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm shadow-lg">
               <CheckCircle2 className="w-10 h-10" />
@@ -142,12 +143,25 @@ const Index = () => {
         </Card>
       </section>
 
+      {/* Security Quiz */}
+      <section className="max-w-6xl mx-auto px-4 py-12">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-foreground mb-3 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+            Teste Seus Conhecimentos
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Responda 3 perguntas simples e veja quanto você aprendeu sobre segurança online
+          </p>
+        </div>
+        <SecurityQuiz />
+      </section>
+
       {/* Password Reminder */}
       <section className="max-w-6xl mx-auto px-4 py-8 pb-16">
-        <Card className="p-6 bg-secondary/50 border-primary/20 shadow-card backdrop-blur-sm">
+        <Card className="p-6 bg-accent/20 border-accent/30 shadow-card backdrop-blur-sm">
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-primary/10 rounded-lg">
-              <Lock className="w-6 h-6 text-primary" />
+            <div className="p-3 bg-accent/20 rounded-lg">
+              <Lock className="w-6 h-6 text-accent" />
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-2 text-xl">Lembrete Importante</h3>
