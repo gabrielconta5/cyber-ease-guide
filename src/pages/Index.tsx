@@ -61,7 +61,7 @@ const Index = () => {
           <div className="inline-block p-6 bg-gradient-primary rounded-3xl mb-6 shadow-glow animate-float">
             <Shield className="w-24 h-24 text-primary-foreground" />
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight pb-2">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-[1.2] pb-4">
             Como se proteger na internet
           </h1>
           <p className="text-2xl md:text-3xl text-foreground/80 max-w-3xl mx-auto animate-fade-in flex items-center justify-center gap-2">
@@ -84,22 +84,6 @@ const Index = () => {
         </Card>
       </section>
 
-      {/* Interactive Password Tools */}
-      <section className="max-w-6xl mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-3">
-            Ferramentas de Senha
-          </h2>
-          <p className="text-muted-foreground">
-            Teste e crie senhas fortes com nossas ferramentas interativas
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          <PasswordStrengthChecker />
-          <PasswordGenerator />
-        </div>
-      </section>
-
       {/* Main Risks */}
       <section className="max-w-6xl mx-auto px-4 py-12 relative">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">
@@ -118,6 +102,22 @@ const Index = () => {
               tips={risk.tips}
             />
           ))}
+        </div>
+      </section>
+
+      {/* Interactive Password Tools */}
+      <section className="max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-3">
+            Ferramentas de Senha
+          </h2>
+          <p className="text-muted-foreground">
+            Teste e crie senhas fortes com nossas ferramentas interativas
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <PasswordStrengthChecker />
+          <PasswordGenerator />
         </div>
       </section>
 
